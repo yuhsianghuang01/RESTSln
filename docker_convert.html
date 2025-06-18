@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專案容器化的步驟</title>
+</head>
+<body>
+    <h1>專案容器化的步驟</h1>
+    <ol>
+        <li>
+            <h2>建立 Dockerfile</h2>
+            <p>在專案的根目錄（例如 <code>RESTSln/REST</code>）中建立一個名為 <code>Dockerfile</code> 的文件，內容如下：</p>
+            <pre><code>FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /app
+
+COPY *.sln .
+COPY REST/*.csproj ./REST/
+RUN dotnet restore
+
+COPY REST/. ./REST/
+WORKDIR /app/REST
+RUN dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/REST/out ./
+
+EXPOSE 5099
+EXPOSE 7068
+
+ENTRYPOINT ["dotnet", "REST.dll"]</code></pre>
+        </li>
+        <li>
+            <h2>建立 .dockerignore 文件</h2>
+            <p>在專案根目錄建立 <code>.dockerignore</code> 文件，內容如下：</p>
+            <pre><code>bin/
+obj/
+*.md
+*.git</code></pre>
+        </li>
+        <li>
+            <h2>建構 Docker 映像</h2>
+            <p>在專案根目錄執行以下命令以建構 Docker 映像：</p>
+            <pre><code>docker build -t rest-app .</code></pre>
+        </li>
+        <li>
+            <h2>執行 Docker 容器</h2>
+            <p>執行以下命令以啟動容器：</p>
+            <pre><code>docker run -d -p 5099:5099 -p 7068:7068 --name rest-container rest-app</code></pre>
+        </li>
+        <li>
+            <h2>測試應用程式</h2>
+            <p>您可以使用瀏覽器或 API 測試工具（如 Thunder Client）訪問以下 URL：</p>
+            <ul>
+                <li><code>http://localhost:5099/WeatherForecast</code></li>
+                <li><code>https://localhost:7068/WeatherForecast</code></li>
+            </ul>
+        </li>
+        <li>
+            <h2>部署到 Docker Server</h2>
+            <p>將 Docker 映像推送到 Docker Registry（例如 Docker Hub），然後在 Docker Server 上拉取並執行映像：</p>
+            <pre><code>docker tag rest-app &lt;your-dockerhub-username&gt;/rest-app
+docker push &lt;your-dockerhub-username&gt;/rest-app</code></pre>
+            <p>在 Docker Server 上執行：</p>
+            <pre><code>docker pull &lt;your-dockerhub-username&gt;/rest-app
+docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub-username&gt;/rest-app</code></pre>
+        </li>
+    </ol>
+</body>
+</html>
