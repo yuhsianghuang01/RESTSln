@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>專案容器化的步驟</title>
 </head>
+
 <body>
     <h1>專案容器化的步驟</h1>
     <ol>
@@ -80,7 +82,8 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
     <ol>
         <li>
             <strong>檢查是否已安裝 Docker</strong>
-            <p>確保您已安裝 Docker Desktop（適用於 Windows）。如果尚未安裝，請前往 <a href="https://www.docker.com/products/docker-desktop">Docker 官方網站</a> 下載並安裝 Docker Desktop。</p>
+            <p>確保您已安裝 Docker Desktop（適用於 Windows）。如果尚未安裝，請前往 <a
+                    href="https://www.docker.com/products/docker-desktop">Docker 官方網站</a> 下載並安裝 Docker Desktop。</p>
         </li>
         <li>
             <strong>配置 PATH</strong>
@@ -88,7 +91,8 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
             <p>您可以執行以下步驟檢查：</p>
             <ol>
                 <li>打開「系統屬性」→「環境變數」。</li>
-                <li>在「系統變數」中找到 <code>Path</code>，並檢查是否包含 Docker 的安裝路徑（例如 <code>C:\Program Files\Docker\Docker\resources\bin</code>）。</li>
+                <li>在「系統變數」中找到 <code>Path</code>，並檢查是否包含 Docker 的安裝路徑（例如
+                    <code>C:\Program Files\Docker\Docker\resources\bin</code>）。</li>
             </ol>
         </li>
         <li>
@@ -150,9 +154,113 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
         <li><strong>輕量化需求：</strong>使用 <code>-alpine</code> 映像。</li>
     </ul>
     <p>您可以在 <a href="https://mcr.microsoft.com/">Microsoft Container Registry</a> 上查看所有可用的 .NET 映像及其版本。</p>
-
+    <h2>Microsoft 提供的容器映像</h2>
+    <p>以下是 Microsoft 提供的容器映像及其功能的詳細說明：</p>
+    <ul>
+        <li>
+            <strong>.NET Aspire Dashboard</strong>
+            <p>官方映像，用於 .NET Aspire Dashboard 應用服務。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Aspire Dashboard (Preview)</strong>
+            <p>預覽映像，用於 .NET Aspire Dashboard 應用服務。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Development Container Images</strong>
+            <p>支援開發容器規範的映像，用於 .NET 開發。</p>
+            <p>最後發布日期：2025/06/16</p>
+        </li>
+        <li>
+            <strong>.NET Framework Runtime</strong>
+            <p>官方映像，用於 .NET Framework 運行時。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Framework SDK</strong>
+            <p>官方映像，用於 .NET Framework SDK。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Framework Samples</strong>
+            <p>示例映像，展示如何容器化 .NET Framework、ASP.NET 和 WCF 應用程式。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Monitor</strong>
+            <p>官方映像，用於 .NET Monitor 工具。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Monitor (Preview)</strong>
+            <p>預覽映像，用於 .NET Monitor 工具。</p>
+            <p>最後發布日期：2025/06/18</p>
+        </li>
+        <li>
+            <strong>.NET Monitor Base</strong>
+            <p>官方映像，用於 .NET Monitor Base 安裝。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Monitor Base (Preview)</strong>
+            <p>預覽映像，用於 .NET Monitor Base 安裝。</p>
+            <p>最後發布日期：2025/06/18</p>
+        </li>
+        <li>
+            <strong>.NET Runtime</strong>
+            <p>官方映像，用於 .NET 運行時。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Runtime (Preview)</strong>
+            <p>預覽映像，用於 .NET 運行時。</p>
+            <p>最後發布日期：2025/06/17</p>
+        </li>
+        <li>
+            <strong>.NET Runtime Dependencies</strong>
+            <p>官方映像，用於 .NET 運行時依賴項。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET Runtime Dependencies (Preview)</strong>
+            <p>預覽映像，用於 .NET 運行時依賴項。</p>
+            <p>最後發布日期：2025/06/17</p>
+        </li>
+        <li>
+            <strong>.NET SDK</strong>
+            <p>官方映像，用於 .NET SDK。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>.NET SDK (Preview)</strong>
+            <p>預覽映像，用於 .NET SDK。</p>
+            <p>最後發布日期：2025/06/18</p>
+        </li>
+        <li>
+            <strong>.NET Samples</strong>
+            <p>示例映像，展示如何容器化 .NET 和 ASP.NET Core 應用程式。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+        <li>
+            <strong>AKS Periscope (Linux)</strong>
+            <p>快速排查 Azure Kubernetes Service (AKS) 集群的問題。</p>
+            <p>最後發布日期：2024/08/07</p>
+        </li>
+        <li>
+            <strong>AKS Periscope (Windows)</strong>
+            <p>快速排查 Azure Kubernetes Service (AKS) 集群的問題。</p>
+            <p>最後發布日期：2022/09/01</p>
+        </li>
+        <li>
+            <strong>ASP.NET</strong>
+            <p>官方映像，用於 ASP.NET。</p>
+            <p>最後發布日期：2025/06/11</p>
+        </li>
+    </ul>
     <h2>Microsoft Artifact Registry</h2>
-    <p><strong>Microsoft Artifact Registry</strong> 是一個由 Microsoft 提供的雲端服務，用於存儲和管理軟體工件（Artifacts）。這些工件通常包括容器映像、包管理器的包（例如 NuGet、npm、Maven 等），以及其他開發過程中生成的文件。</p>
+    <p><strong>Microsoft Artifact Registry</strong> 是一個由 Microsoft 提供的雲端服務，用於存儲和管理軟體工件（Artifacts）。這些工件通常包括容器映像、包管理器的包（例如
+        NuGet、npm、Maven 等），以及其他開發過程中生成的文件。</p>
 
     <h3>主要功能</h3>
     <ul>
@@ -178,4 +286,5 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
     </ul>
     <p>Microsoft Artifact Registry 是 Azure 平台的一部分，通常與其他 Azure 服務（例如 Azure Kubernetes Service）一起使用。</p>
 </body>
+
 </html>
