@@ -92,7 +92,8 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
             <ol>
                 <li>打開「系統屬性」→「環境變數」。</li>
                 <li>在「系統變數」中找到 <code>Path</code>，並檢查是否包含 Docker 的安裝路徑（例如
-                    <code>C:\Program Files\Docker\Docker\resources\bin</code>）。</li>
+                    <code>C:\Program Files\Docker\Docker\resources\bin</code>）。
+                </li>
             </ol>
         </li>
         <li>
@@ -258,6 +259,62 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
             <p>最後發布日期：2025/06/11</p>
         </li>
     </ul>
+    <h2>Linux 可用的映像資訊</h2>
+    <p>以下是適用於 Linux 的映像資訊：</p>
+    <ul>
+        <li>
+            <strong>.NET Runtime with Alpine</strong>
+            <p>用途：使用輕量級的 Alpine Linux 作為基礎映像，適用於 .NET 運行時。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/dotnet/runtime:&lt;version&gt;-alpine</code></p>
+            <p>範例：<code>mcr.microsoft.com/dotnet/runtime:6.0-alpine</code></p>
+        </li>
+        <li>
+            <strong>ASP.NET Runtime with Alpine</strong>
+            <p>用途：使用輕量級的 Alpine Linux 作為基礎映像，適用於 ASP.NET Core。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/dotnet/aspnet:&lt;version&gt;-alpine</code></p>
+            <p>範例：<code>mcr.microsoft.com/dotnet/aspnet:6.0-alpine</code></p>
+        </li>
+        <li>
+            <strong>AKS Periscope (Linux)</strong>
+            <p>用途：快速排查 Azure Kubernetes Service (AKS) 集群的問題。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/aks/periscope:linux</code></p>
+            <p>最後發布日期：2024/08/07</p>
+        </li>
+    </ul>
+    <h2>更多 Linux 可用的映像資訊</h2>
+    <p>以下是更多適用於 Linux 的映像資訊：</p>
+    <ul>
+        <li>
+            <strong>.NET Runtime with Alpine</strong>
+            <p>用途：使用輕量級的 Alpine Linux 作為基礎映像，適用於 .NET 運行時。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/dotnet/runtime:&lt;version&gt;-alpine</code></p>
+            <p>範例：<code>mcr.microsoft.com/dotnet/runtime:6.0-alpine</code></p>
+        </li>
+        <li>
+            <strong>ASP.NET Runtime with Alpine</strong>
+            <p>用途：使用輕量級的 Alpine Linux 作為基礎映像，適用於 ASP.NET Core。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/dotnet/aspnet:&lt;version&gt;-alpine</code></p>
+            <p>範例：<code>mcr.microsoft.com/dotnet/aspnet:6.0-alpine</code></p>
+        </li>
+        <li>
+            <strong>AKS Periscope (Linux)</strong>
+            <p>用途：快速排查 Azure Kubernetes Service (AKS) 集群的問題。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/aks/periscope:linux</code></p>
+            <p>最後發布日期：2024/08/07</p>
+        </li>
+        <li>
+            <strong>Ubuntu-based 映像</strong>
+            <p>用途：基於 Ubuntu 的映像，適合需要更完整 Linux 環境的應用。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/dotnet/runtime:&lt;version&gt;-ubuntu</code></p>
+            <p>範例：<code>mcr.microsoft.com/dotnet/runtime:6.0-ubuntu</code></p>
+        </li>
+        <li>
+            <strong>ASP.NET Runtime with Ubuntu</strong>
+            <p>用途：基於 Ubuntu 的映像，適合 ASP.NET Core 應用程式。</p>
+            <p>映像名稱：<code>mcr.microsoft.com/dotnet/aspnet:&lt;version&gt;-ubuntu</code></p>
+            <p>範例：<code>mcr.microsoft.com/dotnet/aspnet:6.0-ubuntu</code></p>
+        </li>
+    </ul>
     <h2>Microsoft Artifact Registry</h2>
     <p><strong>Microsoft Artifact Registry</strong> 是一個由 Microsoft 提供的雲端服務，用於存儲和管理軟體工件（Artifacts）。這些工件通常包括容器映像、包管理器的包（例如
         NuGet、npm、Maven 等），以及其他開發過程中生成的文件。</p>
@@ -285,6 +342,7 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
         <li><strong>版本控制：</strong>管理工件的不同版本，便於回滾或更新。</li>
     </ul>
     <p>Microsoft Artifact Registry 是 Azure 平台的一部分，通常與其他 Azure 服務（例如 Azure Kubernetes Service）一起使用。</p>
+
 </body>
 
 </html>
