@@ -67,5 +67,40 @@ docker push &lt;your-dockerhub-username&gt;/rest-app</code></pre>
 docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub-username&gt;/rest-app</code></pre>
         </li>
     </ol>
+    <h2>Docker Desktop 預設安裝路徑</h2>
+    <p>Docker Desktop 在 Windows 上的預設安裝路徑是：</p>
+    <pre><code>C:\Program Files\Docker\Docker</code></pre>
+    <p>執行檔（例如 <code>docker.exe</code>）通常位於以下子目錄：</p>
+    <pre><code>C:\Program Files\Docker\Docker\resources\bin</code></pre>
+    <p>您可以使用以下命令檢查 Docker 的執行檔位置：</p>
+    <pre><code>where docker</code></pre>
+
+    <h2>如何解決 'docker' 不是內部或外部命令的問題</h2>
+    <p>這個錯誤表示您的系統尚未安裝 Docker 或 Docker 未正確配置到系統的 PATH 中。以下是解決方法：</p>
+    <ol>
+        <li>
+            <strong>檢查是否已安裝 Docker</strong>
+            <p>確保您已安裝 Docker Desktop（適用於 Windows）。如果尚未安裝，請前往 <a href="https://www.docker.com/products/docker-desktop">Docker 官方網站</a> 下載並安裝 Docker Desktop。</p>
+        </li>
+        <li>
+            <strong>配置 PATH</strong>
+            <p>安裝 Docker 後，確保 Docker 的執行檔（例如 <code>docker.exe</code>）已添加到系統的 PATH 環境變數中。</p>
+            <p>您可以執行以下步驟檢查：</p>
+            <ol>
+                <li>打開「系統屬性」→「環境變數」。</li>
+                <li>在「系統變數」中找到 <code>Path</code>，並檢查是否包含 Docker 的安裝路徑（例如 <code>C:\Program Files\Docker\Docker\resources\bin</code>）。</li>
+            </ol>
+        </li>
+        <li>
+            <strong>重啟系統</strong>
+            <p>如果您剛安裝 Docker 或修改了 PATH，請重啟系統以應用更改。</p>
+        </li>
+        <li>
+            <strong>測試 Docker</strong>
+            <p>打開命令提示字元或 PowerShell，執行以下命令以確認 Docker 是否正常工作：</p>
+            <pre><code>docker --version</code></pre>
+            <p>如果顯示 Docker 的版本號，則表示安裝成功。</p>
+        </li>
+    </ol>
 </body>
 </html>
