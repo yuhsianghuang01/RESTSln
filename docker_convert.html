@@ -102,5 +102,80 @@ docker run -d -p 5099:5099 -p 7068:7068 --name rest-container &lt;your-dockerhub
             <p>如果顯示 Docker 的版本號，則表示安裝成功。</p>
         </li>
     </ol>
+    <h2>可用的 .NET 基礎映像</h2>
+    <p>以下是 Microsoft 提供的常見 .NET 基礎映像選項：</p>
+    <ol>
+        <li>
+            <strong>ASP.NET Runtime</strong>
+            <p><strong>用途：</strong>用於運行 ASP.NET Core 應用程式。</p>
+            <p><strong>映像名稱：</strong><code>mcr.microsoft.com/dotnet/aspnet:&lt;version&gt;</code></p>
+            <p><strong>範例：</strong><code>mcr.microsoft.com/dotnet/aspnet:6.0</code></p>
+        </li>
+        <li>
+            <strong>.NET Runtime</strong>
+            <p><strong>用途：</strong>用於運行一般的 .NET 應用程式（非 ASP.NET Core）。</p>
+            <p><strong>映像名稱：</strong><code>mcr.microsoft.com/dotnet/runtime:&lt;version&gt;</code></p>
+            <p><strong>範例：</strong><code>mcr.microsoft.com/dotnet/runtime:6.0</code></p>
+        </li>
+        <li>
+            <strong>.NET SDK</strong>
+            <p><strong>用途：</strong>用於開發和建構 .NET 應用程式。</p>
+            <p><strong>映像名稱：</strong><code>mcr.microsoft.com/dotnet/sdk:&lt;version&gt;</code></p>
+            <p><strong>範例：</strong><code>mcr.microsoft.com/dotnet/sdk:6.0</code></p>
+        </li>
+        <li>
+            <strong>.NET Monitor</strong>
+            <p><strong>用途：</strong>用於監控 .NET 應用程式的性能。</p>
+            <p><strong>映像名稱：</strong><code>mcr.microsoft.com/dotnet/dotnet-monitor:&lt;version&gt;</code></p>
+            <p><strong>範例：</strong><code>mcr.microsoft.com/dotnet/dotnet-monitor:6.0</code></p>
+        </li>
+        <li>
+            <strong>.NET Runtime with Alpine</strong>
+            <p><strong>用途：</strong>使用輕量級的 Alpine Linux 作為基礎映像。</p>
+            <p><strong>映像名稱：</strong><code>mcr.microsoft.com/dotnet/runtime:&lt;version&gt;-alpine</code></p>
+            <p><strong>範例：</strong><code>mcr.microsoft.com/dotnet/runtime:6.0-alpine</code></p>
+        </li>
+        <li>
+            <strong>ASP.NET Runtime with Alpine</strong>
+            <p><strong>用途：</strong>使用輕量級的 Alpine Linux 作為基礎映像，適用於 ASP.NET Core。</p>
+            <p><strong>映像名稱：</strong><code>mcr.microsoft.com/dotnet/aspnet:&lt;version&gt;-alpine</code></p>
+            <p><strong>範例：</strong><code>mcr.microsoft.com/dotnet/aspnet:6.0-alpine</code></p>
+        </li>
+    </ol>
+
+    <h3>如何選擇基礎映像</h3>
+    <ul>
+        <li><strong>開發用途：</strong>使用 <code>sdk</code> 映像。</li>
+        <li><strong>部署用途：</strong>使用 <code>runtime</code> 或 <code>aspnet</code> 映像。</li>
+        <li><strong>輕量化需求：</strong>使用 <code>-alpine</code> 映像。</li>
+    </ul>
+    <p>您可以在 <a href="https://mcr.microsoft.com/">Microsoft Container Registry</a> 上查看所有可用的 .NET 映像及其版本。</p>
+
+    <h2>Microsoft Artifact Registry</h2>
+    <p><strong>Microsoft Artifact Registry</strong> 是一個由 Microsoft 提供的雲端服務，用於存儲和管理軟體工件（Artifacts）。這些工件通常包括容器映像、包管理器的包（例如 NuGet、npm、Maven 等），以及其他開發過程中生成的文件。</p>
+
+    <h3>主要功能</h3>
+    <ul>
+        <li><strong>容器映像存儲：</strong>
+            <p>支援存儲 Docker 容器映像，提供安全的映像管理和版本控制。</p>
+        </li>
+        <li><strong>包管理：</strong>
+            <p>支援多種包管理器（例如 NuGet、npm、Maven），用於存儲和分發開發依賴項。</p>
+        </li>
+        <li><strong>安全性：</strong>
+            <p>提供身份驗證和授權機制，確保工件的安全性，並支援掃描工件以檢測潛在的安全漏洞。</p>
+        </li>
+        <li><strong>整合性：</strong>
+            <p>與 Azure DevOps 和 GitHub Actions 等工具無縫整合，支援 CI/CD 流程中的工件管理。</p>
+        </li>
+    </ul>
+
+    <h3>用途</h3>
+    <ul>
+        <li><strong>開發團隊：</strong>集中管理和分發軟體工件。</li>
+        <li><strong>部署：</strong>存儲和拉取容器映像以進行應用程式部署。</li>
+        <li><strong>版本控制：</strong>管理工件的不同版本，便於回滾或更新。</li>
+    </ul>
+    <p>Microsoft Artifact Registry 是 Azure 平台的一部分，通常與其他 Azure 服務（例如 Azure Kubernetes Service）一起使用。</p>
 </body>
 </html>
